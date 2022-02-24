@@ -1,0 +1,185 @@
+reactiveclass A(12) {
+	knownrebecs {
+		B kr_B;
+		E kr_E;
+	}
+	statevars {
+		boolean a;
+		int k;
+	}
+	A() {
+		a = true;
+		k = 3;
+	}
+	msgsrv a0() {
+		k = 7;
+	}
+	msgsrv a1() {
+		a = true;
+		if (a)
+		k = 9;
+		kr_C.c1();
+	}
+	msgsrv a2() {
+		k = 5;
+		kr_E.e2();
+		k = 8;
+		kr_B.b0();
+		kr_E.e4();
+	}
+	msgsrv a3() {
+		a = true;
+		if (a)
+		kr_B.b1();
+		if (a)
+		a = false;
+		kr_E.e3();
+	}
+}
+
+reactiveclass B(13) {
+	knownrebecs {
+		C kr_C;
+		D kr_D;
+	}
+	statevars {
+		boolean a;
+	}
+	B() {
+		a = false;
+	}
+	msgsrv b0() {
+		if (a)
+		a = false;
+		a = true;
+		if (a)
+		kr_D.d0();
+		if (a)
+		a = true;
+		kr_C.c1();
+		kr_C.c0();
+	}
+	msgsrv b1() {
+		if (a)
+		a = true;
+		a = false;
+		if (a)
+		kr_C.c0();
+		kr_D.d0();
+	}
+	msgsrv b2() {
+		a = true;
+		kr_D.d0();
+	}
+}
+
+reactiveclass C(12) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		D kr_D;
+		E kr_E;
+	}
+	statevars {
+		boolean h;
+	}
+	C() {
+		h = true;
+		self.c2();
+	}
+	msgsrv c0() {
+		h = false;
+		if (h)
+		kr_D.d0();
+		h = true;
+		kr_B.b2();
+		if (h)
+		h = false;
+	}
+	msgsrv c1() {
+		h = true;
+		if (h)
+		h = true;
+		kr_E.e2();
+		if (h)
+		h = true;
+		kr_A.a0();
+		kr_E.e4();
+		kr_D.d0();
+	}
+	msgsrv c2() {
+		h = false;
+		kr_A.a3();
+		kr_D.d0();
+		if (h)
+		kr_A.a0();
+		if (h)
+		h = true;
+		kr_A.a2();
+		kr_E.e3();
+		kr_A.a1();
+		kr_B.b1();
+		kr_E.e1();
+	}
+}
+
+reactiveclass D(12) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		E kr_E;
+	}
+	statevars {
+		int a;
+		int c;
+	}
+	D() {
+		a = 3;
+		c = 3;
+	}
+	msgsrv d0() {
+		a = 9;
+	}
+}
+
+reactiveclass E(13) {
+	knownrebecs {
+		C kr_C;
+	}
+	statevars {
+		int h;
+	}
+	E() {
+		h = 5;
+	}
+	msgsrv e0() {
+		h = 1;
+		kr_C.c0();
+		h = 3;
+	}
+	msgsrv e1() {
+		h = 5;
+		kr_C.c0();
+		h = 3;
+		kr_C.c1();
+	}
+	msgsrv e2() {
+		h = 7;
+	}
+	msgsrv e3() {
+		h = 3;
+		h = 5;
+		kr_C.c0();
+	}
+	msgsrv e4() {
+		h = 6;
+	}
+}
+
+main {
+	A instanceA(instanceB, instanceE):();
+	B instanceB(instanceC, instanceD):();
+	C instanceC(instanceA, instanceB, instanceD, instanceE):();
+	D instanceD(instanceA, instanceB, instanceE):();
+	E instanceE(instanceC):();
+}

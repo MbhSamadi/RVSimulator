@@ -1,0 +1,13 @@
+{
+"states": ["q4", "q0", "q3", "q5", "q1", "q2"],
+"initial_state": "q0",
+"transitions": {"q0": {"A-c1-C": "q1",
+     "C-a2-A": "q4",
+     "B-c1-C": "q5"},
+     "q1": {"C-a3-A": "q2"},
+     "q2": {"A-b1-B": "q3"},
+     "q3": {},
+     "q4": {"C-a0-A": "q2"},
+     "q5": {"C-a1-A": "q2"}},
+"final_states": ["q3"],
+}

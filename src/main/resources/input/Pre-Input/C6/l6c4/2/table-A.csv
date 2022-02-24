@@ -1,0 +1,5 @@
+pre,transition,vio,final
+"(q10,instanceF-a3-instanceA,q11)","(q11,instanceA-b0-instanceB,q6)",[],True
+"(q0,instanceF-a1-instanceA,q1)","(q1,instanceA-e3-instanceE,q2)",[],False
+"(q0,instanceB-a2-instanceA,q7)","(q7,instanceA-c0-instanceC,q8)",[],False
+"(q4,instanceF-a3-instanceA,q5)","(q5,instanceA-e2-instanceE,q6)",[],True

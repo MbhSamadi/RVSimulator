@@ -1,0 +1,3 @@
+total run: 204
+both:90 (44%)
+nothing:114 (55%)

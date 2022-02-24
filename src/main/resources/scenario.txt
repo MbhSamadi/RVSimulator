@@ -1,0 +1,4 @@
+light
+door
+light
+door

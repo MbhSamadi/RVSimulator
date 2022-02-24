@@ -1,0 +1,9 @@
+pre,transition,vio,final
+"(q0,instanceJ-f1-instanceF,q16)","(q16,instanceF-d1-instanceD,q17)",[],False
+"(q17,instanceD-f0-instanceF,q18)","(q18,instanceF-c2-instanceC,q19)",[],False
+"(q5,instanceK-f3-instanceF,q6)","(q6,instanceF-g2-instanceG,q7)",[],False
+,"(q0,instanceF-g1-instanceG,q9)",[],False
+,"(q0,instanceF-h3-instanceH,q30)",[],False
+"(q0,instanceK-f1-instanceF,q1)","(q1,instanceF-c0-instanceC,q2)",[],False
+"(q13,instanceJ-f3-instanceF,q14)","(q14,instanceF-h4-instanceH,q15)",[],False
+"(q24,instanceD-f0-instanceF,q25)","(q25,instanceF-c2-instanceC,q26)",[],False

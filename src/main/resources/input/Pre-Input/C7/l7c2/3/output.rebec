@@ -1,0 +1,375 @@
+reactiveclass A(15) {
+	knownrebecs {
+		C kr_C;
+		D kr_D;
+		E kr_E;
+		G kr_G;
+	}
+	statevars {
+		boolean g;
+	}
+	A() {
+		g = false;
+	}
+	msgsrv a0() {
+		g = false;
+		kr_E.e5();
+		kr_E.e0();
+		if (g)
+		g = false;
+		kr_C.c3();
+		kr_D.d2();
+	}
+}
+
+reactiveclass B(16) {
+	knownrebecs {
+		A kr_A;
+		C kr_C;
+		E kr_E;
+		F kr_F;
+		G kr_G;
+		H kr_H;
+	}
+	statevars {
+		int f;
+		int d;
+	}
+	B() {
+		f = 7;
+		d = 4;
+
+	}
+	msgsrv b0() {
+		d = 7;
+		kr_E.e1();
+		kr_C.c3();
+		kr_C.c2();
+		d = 6;
+		f = 4;
+		kr_C.c1();
+		kr_G.g3();
+	}
+	msgsrv b1() {
+		f = 3;
+		d = 4;
+		kr_E.e1();
+		kr_C.c2();
+		kr_C.c3();
+	}
+	msgsrv b2() {
+		f = 2;
+		kr_E.e1();
+		d = 4;
+		d = 4;
+		kr_C.c3();
+
+	}
+	msgsrv b3() {
+		f = 5;
+		d = 0;
+		f = 9;
+		kr_E.e2();
+		f = 1;
+		kr_C.c3();
+	}
+	msgsrv b4() {
+		d = 8;
+		d = 6;
+	}
+	msgsrv b5() {
+		f = 2;
+	}
+}
+
+reactiveclass C(16) {
+	knownrebecs {
+		B kr_B;
+		D kr_D;
+		F kr_F;
+	}
+	statevars {
+		int h;
+		int c;
+		boolean f;
+	}
+	C() {
+		h = 7;
+		c = 7;
+		f = true;
+	}
+	msgsrv c0() {
+		h = 2;
+	}
+	msgsrv c1() {
+		h = 6;
+		kr_D.d3();
+	}
+	msgsrv c2() {
+		c = 2;
+	}
+	msgsrv c3() {
+		h = 5;
+	}
+}
+
+reactiveclass D(15) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		H kr_H;
+	}
+	statevars {
+		boolean d;
+		boolean g;
+		boolean c;
+	}
+	D() {
+		d = false;
+		g = false;
+		c = false;
+		self.d0();
+		g = false;
+		c = true;
+	}
+	msgsrv d0() {
+		c = true;
+		if (g)
+		kr_B.b3();
+		if (c)
+		d = true;
+		kr_A.a0();
+		kr_B.b4();
+	}
+	msgsrv d1() {
+		c = false;
+		if (d)
+		c = true;
+		if (g)
+		c = false;
+	}
+	msgsrv d2() {
+		g = true;
+		g = false;
+		if (c)
+		c = false;
+		kr_H.h1();
+	}
+	msgsrv d3() {
+		g = true;
+	}
+}
+
+reactiveclass E(14) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		C kr_C;
+		H kr_H;
+	}
+	statevars {
+		boolean e;
+		boolean l;
+		boolean f;
+	}
+	E() {
+		e = true;
+		l = true;
+		f = true;
+
+	}
+	msgsrv e0() {
+		e = true;
+		kr_H.h2();
+		if (e)
+		e = true;
+
+	}
+	msgsrv e1() {
+		if (e)
+		l = true;
+	}
+	msgsrv e2() {
+		l = false;
+		f = false;
+	}
+	msgsrv e3() {
+		e = true;
+		l = true;
+		if (f)
+		e = false;
+	}
+	msgsrv e4() {
+		e = true;
+	}
+	msgsrv e5() {
+		f = true;
+		if (f)
+		f = true;
+		l = true;
+	}
+}
+
+reactiveclass F(13) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		C kr_C;
+		D kr_D;
+		E kr_E;
+		G kr_G;
+		H kr_H;
+		I kr_I;
+	}
+	statevars {
+		boolean i;
+		int e;
+		boolean k;
+	}
+	F() {
+		i = true;
+		e = 4;
+		k = false;
+	}
+}
+
+reactiveclass G(14) {
+	knownrebecs {
+		I kr_I;
+		A kr_A;
+		C kr_C;
+	}
+	statevars {
+		boolean i;
+	}
+	G() {
+		i = true;
+		self.g0();
+		i = true;
+	}
+	msgsrv g0() {
+		i = false;
+		if (i)
+		i = true;
+		if (i)
+		kr_I.i1();
+		kr_I.i2();
+		kr_A.a0();
+	}
+	msgsrv g1() {
+		i = false;
+		if (i)
+		i = true;
+		if (i)
+		i = true;
+	}
+	msgsrv g2() {
+		i = false;
+		if (i)
+		i = false;
+		i = false;
+
+	}
+	msgsrv g3() {
+		i = false;
+		if (i)
+		i = false;
+		kr_C.c0();
+
+	}
+	msgsrv g4() {
+		i = true;
+		if (i)
+		i = true;
+	}
+	msgsrv g5() {
+		i = true;
+		i = true;
+		i = false;
+	}
+}
+
+reactiveclass H(15) {
+	knownrebecs {
+		I kr_I;
+		B kr_B;
+		D kr_D;
+	}
+	statevars {
+		boolean e;
+		boolean l;
+	}
+	H() {
+		e = true;
+		l = true;
+	}
+	msgsrv h0() {
+		l = true;
+		l = false;
+		l = true;
+		if (l)
+		e = false;
+	}
+	msgsrv h1() {
+		e = false;
+		kr_I.i0();
+		if (l)
+		e = true;
+	}
+	msgsrv h2() {
+		if (l)
+		l = true;
+		kr_I.i0();
+		if (l)
+		l = true;
+	}
+}
+
+reactiveclass I(13) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+		D kr_D;
+		E kr_E;
+		F kr_F;
+		G kr_G;
+		H kr_H;
+	}
+	statevars {
+		int h;
+		int a;
+		int c;
+	}
+	I() {
+		h = 3;
+		a = 9;
+		c = 8;
+	}
+	msgsrv i0() {
+		h = 7;
+		kr_B.b0();
+		c = 2;
+		a = 6;
+	}
+	msgsrv i1() {
+		a = 5;
+		c = 1;
+	}
+	msgsrv i2() {
+		c = 6;
+		c = 8;
+		h = 7;
+	}
+}
+
+main {
+	A instanceA(instanceC, instanceD, instanceE, instanceG):();
+	B instanceB(instanceA, instanceC, instanceE, instanceF, instanceG, instanceH):();
+	C instanceC(instanceB, instanceD, instanceF):();
+	D instanceD(instanceA, instanceB, instanceH):();
+	E instanceE(instanceA, instanceB, instanceC, instanceH):();
+	F instanceF(instanceA, instanceB, instanceC, instanceD, instanceE, instanceG, instanceH, instanceI):();
+	G instanceG(instanceI, instanceA, instanceC):();
+	H instanceH(instanceI, instanceB, instanceD):();
+	I instanceI(instanceB, instanceC, instanceD, instanceE, instanceF, instanceG, instanceH):();
+}

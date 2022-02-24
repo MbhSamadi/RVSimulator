@@ -1,0 +1,18 @@
+reactiveclass RebecaClass(5) {
+
+	knownrebecs {
+	}
+
+	statevars {
+	}
+
+	RebecaClass() {
+	    int noValue;
+	    int a = 2, b = 3, c = 3 + 4;
+	}
+
+}
+
+main {
+	RebecaClass obj ():();
+}

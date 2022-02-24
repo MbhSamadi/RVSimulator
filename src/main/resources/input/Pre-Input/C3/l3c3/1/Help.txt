@@ -1,0 +1,7 @@
+reactiveclass A== actor A,
+
+statevars= the variables of A,
+
+A()=the constructor of A,
+
+msgsrv a0= a0 is the message which A has received,

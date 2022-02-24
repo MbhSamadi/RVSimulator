@@ -1,0 +1,132 @@
+reactiveclass A(12) {
+	knownrebecs {
+		D kr_D;
+	}
+	statevars {
+		boolean d;
+		int i;
+	}
+	A() {
+		d = false;
+		i = 4;
+	}
+	msgsrv a0() {
+		i = 1;
+	}
+}
+
+reactiveclass B(12) {
+	knownrebecs {
+		A kr_A;
+		C kr_C;
+		D kr_D;
+	}
+	statevars {
+		int k;
+		boolean e;
+	}
+	B() {
+		k = 3;
+		e = false;
+	}
+	msgsrv b0() {
+		if (e)
+		e = false;
+	}
+	msgsrv b1() {
+		e = true;
+		if (e)
+		e = false;
+		e = true;
+		k = 2;
+
+	}
+	msgsrv b2() {
+		e = true;
+	}
+}
+
+reactiveclass C(12) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		D kr_D;
+	}
+	statevars {
+		boolean c;
+		int b;
+		int g;
+	}
+	C() {
+		c = false;
+		b = 9;
+		g = 9;
+		self.c2();
+		c = false;
+	}
+	msgsrv c0() {
+		c = false;
+		g = 7;
+		kr_D.d0();
+
+	}
+	msgsrv c1() {
+		g = 9;
+		b = 3;
+		g = 3;
+
+	}
+	msgsrv c2() {
+		b = 3;
+		kr_D.d1();
+		kr_D.d3();
+	}
+}
+
+reactiveclass D(13) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+	}
+	statevars {
+		boolean l;
+		int c;
+	}
+	D() {
+		l = true;
+		c = 5;
+	}
+	msgsrv d0() {
+		l = false;
+		c = 3;
+		kr_B.b2();
+	}
+	msgsrv d1() {
+		l = true;
+		if (l)
+		l = false;
+		l = true;
+		kr_C.c0();
+	}
+	msgsrv d2() {
+		c = 5;
+		if (l)
+		c = 1;
+
+	}
+	msgsrv d3() {
+		l = true;
+		if (l)
+		l = true;
+		if (l)
+		c = 3;
+		kr_C.c0();
+	}
+}
+
+main {
+	A instanceA(instanceD):();
+	B instanceB(instanceA, instanceC, instanceD):();
+	C instanceC(instanceA, instanceB, instanceD):();
+	D instanceD(instanceB, instanceC):();
+}

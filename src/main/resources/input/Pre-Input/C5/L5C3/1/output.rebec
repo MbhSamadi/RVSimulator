@@ -1,0 +1,187 @@
+reactiveclass A(11) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+		D kr_D;
+	}
+	statevars {
+		boolean i;
+	}
+	A() {
+		i = false;
+		self.a2();
+		i = false;
+
+	}
+	msgsrv a0() {
+		i = true;
+		if (i)
+		i = false;
+		if (i)
+		i = true;
+	}
+	msgsrv a1() {
+		if (i)
+		i = false;
+		if (i)
+		i = true;
+	}
+	msgsrv a2() {
+		i = true;
+		i = true;
+		kr_C.c2();
+	}
+	msgsrv a3() {
+		if (i)
+		i = true;
+	}
+	msgsrv a4() {
+		i = true;
+		i = true;
+		if (i)
+		i = false;
+	}
+}
+
+reactiveclass B(14) {
+	knownrebecs {
+		C kr_C;
+		D kr_D;
+		E kr_E;
+	}
+	statevars {
+		int h;
+	}
+	B() {
+		h = 1;
+	}
+	msgsrv b0() {
+		h = 0;
+		h = 1;
+		h = 3;
+	}
+	msgsrv b1() {
+		h = 7;
+		h = 6;
+	}
+	msgsrv b2() {
+		h = 0;
+		h = 4;
+		kr_D.d1();
+	}
+}
+
+reactiveclass C(14) {
+	knownrebecs {
+		B kr_B;
+		E kr_E;
+	}
+	statevars {
+		int g;
+	}
+	C() {
+		g = 9;
+	}
+	msgsrv c0() {
+		g = 2;
+		kr_E.e2();
+		g = 1;
+	}
+	msgsrv c1() {
+		g = 9;
+		g = 5;
+		g = 3;
+	}
+	msgsrv c2() {
+		g = 2;
+		kr_B.b2();
+		g = 1;
+		g = 4;
+		g = 1;
+	}
+	msgsrv c3() {
+		g = 8;
+		kr_E.e2();
+		g = 3;
+		g = 4;
+		kr_E.e3();
+	}
+}
+
+reactiveclass D(12) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		C kr_C;
+		E kr_E;
+	}
+	statevars {
+		boolean a;
+	}
+	D() {
+		a = true;
+
+	}
+	msgsrv d0() {
+		a = true;
+		a = true;
+		if (a)
+		a = true;
+	}
+	msgsrv d1() {
+		a = false;
+		a = true;
+		kr_C.c0();
+		if (a)
+		a = true;
+		kr_C.c3();
+
+	}
+	msgsrv d2() {
+		a = true;
+	}
+	msgsrv d3() {
+		a = false;
+		a = false;
+	}
+}
+
+reactiveclass E(13) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+	}
+	statevars {
+		int b;
+	}
+	E() {
+		b = 3;
+		self.e0();
+		b = 9;
+
+	}
+	msgsrv e0() {
+		b = 6;
+		b = 5;
+		kr_C.c2();
+	}
+	msgsrv e1() {
+		b = 7;
+		b = 2;
+		b = 5;
+	}
+	msgsrv e2() {
+		b = 6;
+	}
+	msgsrv e3() {
+		b = 0;
+	}
+}
+
+main {
+	A instanceA(instanceB, instanceC, instanceD):();
+	B instanceB(instanceC, instanceD, instanceE):();
+	C instanceC(instanceB, instanceE):();
+	D instanceD(instanceA, instanceB, instanceC, instanceE):();
+	E instanceE(instanceB, instanceC):();
+}

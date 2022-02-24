@@ -1,0 +1,45 @@
+reactiveclass Sender(2) {
+
+	knownrebecs {
+        Receiver target;
+	}
+
+	statevars {
+		boolean history;
+	}
+
+	Sender() {
+	    history = false;
+	    self.notify();
+	}
+
+    msgsrv notify() {
+        history = true;
+        target.notify(history);
+	}
+
+}
+
+reactiveclass Receiver(5) {
+
+	knownrebecs {
+	}
+
+	statevars {
+		boolean call;
+	}
+
+	Receiver() {
+	    call = false;
+	}
+
+	msgsrv notify(boolean history) {
+	    call = history;
+	}
+
+}
+
+main {
+	Sender sender (receiver):();
+	Receiver receiver ():();
+}

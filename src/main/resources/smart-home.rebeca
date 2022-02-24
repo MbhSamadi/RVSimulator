@@ -1,0 +1,103 @@
+reactiveclass Light(5) {
+
+	knownrebecs { 
+		Door door2;
+		Gate gate;
+		     
+	} 
+      
+	statevars { 
+		boolean v5; 
+		boolean y;
+		int ali;
+	}
+
+    Light(Door test) {
+       v5 = false;
+       String kofte = "ghaza";
+       door2.initial();
+       self.initial(false);
+    }
+  
+	msgsrv initial(boolean temp) {
+	    if (temp == true)
+	        ali = 10;
+        else
+            ali = 20;
+		// self.sensel();
+	} 
+  
+	msgsrv sensel() { 
+		y=?(true,false);
+		if (y)
+		gate.on();
+	}
+	
+	msgsrv set() { 
+		v5=true;
+		self.sensel();
+	}
+} 
+ 
+reactiveclass Door(5) {
+
+	knownrebecs {
+		Light light;
+		Gate gate;
+	} 
+      
+	statevars { 
+		boolean v4;
+		boolean y;
+	} 
+  
+	msgsrv initial() {
+	    v4 = true;
+		// self.sensed();
+	} 
+  
+	msgsrv sensed() {
+		y=?(true,false);
+		if (y) 
+		light.set();
+		gate.open();
+		v4=true;
+	} 
+
+}
+
+reactiveclass Gate(5) { 
+
+	knownrebecs { 
+		Light light;
+		Door door; 
+		     
+	} 
+	  
+	statevars { 
+		boolean v1,v2,v3; 
+		int salam;
+	} 
+  
+	msgsrv initial() { 
+		v1=true;
+	} 
+  
+	msgsrv on() { 
+		v2=true;
+		light.sensel();
+	}
+	
+	msgsrv open() { 
+		v3=true;
+		door.sensed();
+		
+	}
+}
+
+main { 
+	Light light (door,gate):(door);
+	Door door(light,gate):();
+	Gate gate(light,door):(); 
+	Gate gate2(light,door):();
+} 

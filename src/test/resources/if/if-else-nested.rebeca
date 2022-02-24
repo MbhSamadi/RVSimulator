@@ -1,0 +1,33 @@
+reactiveclass RebecaClass(5) {
+
+	knownrebecs {
+	}
+
+	statevars {
+		boolean condition1;
+		boolean condition2;
+		boolean insideElseOfElseIf;
+	}
+
+	RebecaClass() {
+	    condition1 = false;
+	    condition2 = true;
+
+	    if (condition1) {
+            insideElseOfElseIf = false;
+        } else if (condition2) {
+            insideElseOfElseIf = false;
+            if (condition1)
+                insideElseOfElseIf = false;
+            else
+                insideElseOfElseIf = true;
+        } else {
+            insideElseOfElseIf = false;
+        }
+	}
+
+}
+
+main {
+	RebecaClass obj ():();
+}

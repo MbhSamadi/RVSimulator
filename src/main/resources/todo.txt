@@ -1,0 +1,39 @@
+//TODO:
+ 1- execute send instruction
+ 2- Simulator should give next state based on given state
+ 3- log sequence of executed states
+ 4- execute sequence based on given log
+ 5- multiple actors testcase
+
+//TODO:
+ 1- add parameter for message call
+ 2- create a monitor for each rebec with mapping
+ 3- Monitor: {
+    monitoring_queue
+    shared_queue -> for its actor
+
+    fun main
+    fun receive_regular_message(message)
+    fun receive_monitoring_message(message)
+ }
+ 4- new Simulator & actor(monitor)
+
+//TODO:
+0- increment vc after each instruction
+1- send vc for each message
+2- update actor vc while taking new message
+3- read csv file and create table for each actors
+
+//TODO:
+1- test vc
+
+//TODO:
+1- add log of vc
+2- add delay for message sending & execution
+3- measure -> ask & tell count total - per property
+4- measure -> avg time for every process between ask & tell
+5- measure -> avg time for all process between ask & tell
+6- at declare time -> history size of each monitor
+7- test algorithm with log
+
+gitlab: mSamadi

@@ -1,0 +1,48 @@
+reactiveclass A(11) {
+	knownrebecs {
+		B kr_B;
+	}
+	statevars {
+		int a;
+	}
+	A() {
+		a = 5;
+		self.a0();
+	}
+	msgsrv a0() {
+		a = 7;
+		kr_B.b1();
+		a = 2;
+		a = 1;
+	}
+	msgsrv a1() {
+		a = 4;
+		kr_B.b0();
+	}
+}
+
+reactiveclass B(11) {
+	knownrebecs {
+		A kr_A;
+	}
+	statevars {
+		int a;
+		int f;
+	}
+	B() {
+		a = 8;
+		f = 2;
+	}
+	msgsrv b0() {
+		a = 1;
+	}
+	msgsrv b1() {
+		f = 9;
+		kr_A.a1();
+	}
+}
+
+main {
+	A instanceA(instanceB):();
+	B instanceB(instanceA):();
+}

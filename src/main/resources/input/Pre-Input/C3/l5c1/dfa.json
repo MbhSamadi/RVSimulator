@@ -1,0 +1,14 @@
+{
+"casuality sequences": [["(C,a1,A)", "(A,b2,B)", "(B,c2,C)", "(C,b0,B)", "(B,c0,C)"]],
+"Non casuality sequences": [],
+"states": ["q5", "q2", "q4", "q3", "q1", "q0"],
+"initial_state": "q0",
+"transitions": {"q0": {"C-a1-A": "q1"},
+     "q1": {"A-b2-B": "q2"},
+     "q2": {"B-c2-C": "q3"},
+     "q3": {"C-b0-B": "q4"},
+     "q4": {"B-c0-C": "q5"},
+     "q5": {}},
+"final_states": ["q5"],
+"backwards": [],
+}

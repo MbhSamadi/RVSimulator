@@ -1,0 +1,89 @@
+reactiveclass A(12) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+	}
+	statevars {
+		int i;
+		int g;
+		boolean f;
+	}
+	A() {
+		i = 1;
+		g = 4;
+		f = false;
+	}
+	msgsrv a0() {
+		g = 5;
+		kr_C.c2();
+
+	}
+}
+
+reactiveclass B(12) {
+	knownrebecs {
+		A kr_A;
+		C kr_C;
+	}
+	statevars {
+		int i;
+		int j;
+		int k;
+	}
+	B() {
+		i = 8;
+		j = 6;
+		k = 8;
+	}
+	msgsrv b0() {
+		j = 1;
+		kr_C.c2();
+		i = 4;
+	}
+	msgsrv b1() {
+		k = 9;
+		j = 1;
+		kr_C.c2();
+	}
+	msgsrv b2() {
+		k = 0;
+	}
+}
+
+reactiveclass C(12) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+	}
+	statevars {
+		int b;
+	}
+	C() {
+		b = 1;
+		self.c0();
+		self.c1();
+	}
+	msgsrv c0() {
+		b = 2;
+		b = 8;
+		kr_A.a0();
+		b = 7;
+		kr_B.b1();
+	}
+	msgsrv c1() {
+		b = 0;
+		b = 4;
+		b = 4;
+		b = 7;
+	}
+	msgsrv c2() {
+		b = 4;
+		kr_B.b2();
+	}
+}
+
+main {
+	A instanceA(instanceB, instanceC):();
+	B instanceB(instanceA, instanceC):();
+	C instanceC(instanceA, instanceB):();
+}

@@ -1,0 +1,264 @@
+reactiveclass A(14) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+		E kr_E;
+		F kr_F;
+		G kr_G;
+	}
+	statevars {
+		int g;
+		boolean c;
+	}
+	A() {
+		g = 5;
+		c = true;
+	}
+	msgsrv a0() {
+		c = true;
+		if (c)
+		g = 6;
+		kr_C.c0();
+	}
+}
+
+reactiveclass B(15) {
+	knownrebecs {
+		C kr_C;
+		D kr_D;
+		E kr_E;
+		F kr_F;
+		G kr_G;
+	}
+	statevars {
+		int h;
+		int l;
+		int i;
+	}
+	B() {
+		h = 7;
+		l = 7;
+		i = 0;
+
+	}
+	msgsrv b0() {
+		l = 3;
+		i = 9;
+	}
+	msgsrv b1() {
+		l = 2;
+		i = 5;
+		l = 8;
+	}
+	msgsrv b2() {
+		h = 8;
+		l = 0;
+		kr_D.d0();
+
+	}
+	msgsrv b3() {
+		h = 9;
+		h = 5;
+		kr_C.c0();
+		l = 3;
+	}
+}
+
+reactiveclass C(15) {
+	knownrebecs {
+		A kr_A;
+		D kr_D;
+		E kr_E;
+		F kr_F;
+		G kr_G;
+	}
+	statevars {
+		int g;
+	}
+	C() {
+		g = 2;
+	}
+	msgsrv c0() {
+		g = 5;
+		g = 0;
+		g = 5;
+		kr_G.g3();
+
+	}
+	msgsrv c1() {
+		g = 3;
+		g = 2;
+		g = 8;
+		g = 1;
+	}
+	msgsrv c2() {
+		g = 4;
+		g = 7;
+	}
+	msgsrv c3() {
+		g = 9;
+	}
+	msgsrv c4() {
+		g = 1;
+	}
+}
+
+reactiveclass D(15) {
+	knownrebecs {
+		B kr_B;
+		C kr_C;
+		F kr_F;
+		G kr_G;
+	}
+	statevars {
+		boolean f;
+	}
+	D() {
+		f = true;
+	}
+	msgsrv d0() {
+		f = false;
+		if (f)
+		f = true;
+		kr_G.g2();
+	}
+	msgsrv d1() {
+		if (f)
+		f = true;
+	}
+	msgsrv d2() {
+		f = false;
+		f = false;
+	}
+	msgsrv d3() {
+		f = true;
+
+	}
+}
+
+reactiveclass E(15) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		C kr_C;
+		D kr_D;
+		F kr_F;
+		G kr_G;
+	}
+	statevars {
+		boolean l;
+		boolean k;
+		int f;
+	}
+	E() {
+		l = false;
+		k = false;
+		f = 8;
+	}
+	msgsrv e0() {
+		k = true;
+		if (l)
+		f = 2;
+		kr_C.c3();
+		if (l)
+		k = true;
+	}
+	msgsrv e1() {
+		k = false;
+		k = true;
+		kr_G.g2();
+
+	}
+	msgsrv e2() {
+		f = 1;
+		kr_G.g1();
+		f = 8;
+		kr_B.b3();
+		kr_A.a0();
+	}
+}
+
+reactiveclass F(16) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		C kr_C;
+		D kr_D;
+		E kr_E;
+		G kr_G;
+	}
+	statevars {
+		int i;
+		boolean l;
+		boolean d;
+	}
+	F() {
+		i = 1;
+		l = false;
+		d = true;
+		l = false;
+		self.f1();
+		d = false;
+
+	}
+	msgsrv f0() {
+		i = 0;
+		d = false;
+		kr_B.b2();
+		d = true;
+	}
+	msgsrv f1() {
+		l = false;
+		l = true;
+		kr_E.e2();
+	}
+	msgsrv f2() {
+		if (d)
+		i = 9;
+	}
+}
+
+reactiveclass G(16) {
+	knownrebecs {
+		A kr_A;
+		B kr_B;
+		D kr_D;
+		E kr_E;
+		F kr_F;
+	}
+	statevars {
+		int l;
+		int b;
+	}
+	G() {
+		l = 7;
+		b = 7;
+	}
+	msgsrv g0() {
+		b = 5;
+		b = 9;
+	}
+	msgsrv g1() {
+		l = 7;
+		kr_F.f0();
+	}
+	msgsrv g2() {
+		l = 6;
+	}
+	msgsrv g3() {
+		b = 6;
+		l = 1;
+		kr_E.e0();
+		kr_E.e1();
+	}
+}
+
+main {
+	A instanceA(instanceB, instanceC, instanceE, instanceF, instanceG):();
+	B instanceB(instanceC, instanceD, instanceE, instanceF, instanceG):();
+	C instanceC(instanceA, instanceD, instanceE, instanceF, instanceG):();
+	D instanceD(instanceB, instanceC, instanceF, instanceG):();
+	E instanceE(instanceA, instanceB, instanceC, instanceD, instanceF, instanceG):();
+	F instanceF(instanceA, instanceB, instanceC, instanceD, instanceE, instanceG):();
+	G instanceG(instanceA, instanceB, instanceD, instanceE, instanceF):();
+}

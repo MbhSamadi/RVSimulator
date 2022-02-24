@@ -1,0 +1,28 @@
+reactiveclass RebecaClass(5) {
+
+	knownrebecs {
+	}
+
+	statevars {
+		int op1;
+		int op2;
+		int sumResult;
+		int minusResult;
+		int multResult;
+		int divResult;
+	}
+
+	RebecaClass() {
+	    op1 = 25;
+	    op2 = 5;
+	    sumResult  = op1 + op2;
+	    minusResult  = op1 - op2;
+	    multResult  = op1 * op2;
+	    divResult  = op1 / op2;
+	}
+
+}
+
+main {
+	RebecaClass obj ():();
+}
